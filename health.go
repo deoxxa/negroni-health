@@ -24,7 +24,7 @@ type Health struct {
 }
 
 func New(options ...Option) *Health {
-	var h Health
+	h := Health{path: "/health", status: http.StatusOK}
 
 	for _, option := range options {
 		option(&h)
